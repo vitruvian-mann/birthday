@@ -5,57 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, My Love!</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the pop-up (can also be in styles.css) */
+        #wishPopup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #wishPopup h2 {
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        #wishInput {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #wishSubmitBtn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #wishSubmitBtn:hover {
+            background-color: #e04fa1;
+        }
+
+        .balloon {
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            bottom: -70px;
+            opacity: 0;
+            animation: float 4s ease-out forwards, pop 0.3s ease-out forwards 3s;
+            transform-origin: bottom center;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #333;
+        }
+
+        @keyframes float {
+            0% { bottom: -70px; opacity: 1; transform: translateX(0) rotate(0deg); }
+            100% { bottom: calc(100vh + 70px); opacity: 0.8; transform: translateX(var(--float-x)) rotate(calc(var(--float-rotate) * 1deg)); }
+        }
+
+        @keyframes pop {
+            to { transform: scale(1.5) translateY(-20px); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Happy Birthday, [Girlfriend's Name]!</h1>
+        <h1>Happy Birthday, Confidence Nmesoma Ubochi!</h1>
+		<i>THE ABSOLUTE LOVE OF MY LIFE</i>
     </header>
 
     <section id="hero">
-        <img src="images/photo1.png" alt="You and [Girlfriend's Name]">
+        <img src="images/photo1.jpg" alt="Bruno et Confidence">
         <p>Wishing the most amazing person a very happy birthday. You light up my life!</p>
     </section>
 
-<section id="gallery">
-    <h2>Our Memories</h2>
-    <div class="carousel-container">
-        <div class="carousel-slide active" data-index="0">
+    <section id="gallery">
+        <h2>Our Memories</h2>
+        <div class="carousel-container">
+			 <div class="carousel-slide active" data-index="0">
             <img src="images/photo2.jpg" alt="Memory 1">
             <div class="slide-caption">
-                <p>Remember this day, [Girlfriend's Name]? We had so much fun [briefly describe the memory]!</p>
+                <p>Remember this day, this is when it all began officially for us</p>
             </div>
         </div>
         <div class="carousel-slide" data-index="1">
             <img src="images/photo3.jpg" alt="Memory 2">
             <div class="slide-caption">
-                <p>This was when we [briefly describe the memory]. Your smile here is everything!</p>
+                <p>Akwaeke m, look how she radiates like the sun, beautifully poised</p>
             </div>
         </div>
         <div class="carousel-slide" data-index="2">
-            <img src="images/photo4.png" alt="Memory 3">
+            <img src="images/photo4.jpg" alt="Memory 3">
             <div class="slide-caption">
-                <p>Such a special moment, [Girlfriend's Name]. I'll always cherish [mention a detail about the memory].</p>
+                <p>Look at her, my angel, a rose among thorns, intensely stuuning and gorgeous.</p>
+            </div>
+		</div>
+		<div class="carousel-slide" data-index="3">
+            <img src="images/photo5.jpg" alt="Memory 4">
+            <div class="slide-caption">
+                <p>In another universe its still May and you haven't left. I miss you.</p>
+            </div>
+        </div>
+		<div class="carousel-slide" data-index="4">
+            <img src="images/photo6.jpg" alt="Memory 5">
+            <div class="slide-caption">
+                <p>Look at her, she made me fluent in love and romance</p>
+            </div>
+        </div>
+		<div class="carousel-slide" data-index="5">
+            <img src="images/photo7.jpg" alt="Memory 6">
+            <div class="slide-caption">
+                <p>My sweet nightingale</p>
+            </div>
+        </div>
+		<div class="carousel-slide" data-index="6">
+            <img src="images/photo8.jpg" alt="Memory 7">
+            <div class="slide-caption">
+                <p>Anyanwu Ututu m</p>
+            </div>
+        </div>
+		<div class="carousel-slide" data-index="7">
+            <img src="images/photo9.jpg" alt="Memory 8">
+            <div class="slide-caption">
+                <p>nkem</p>
             </div>
         </div>
         <button class="prev-btn">Previous</button>
         <button class="next-btn">Next</button>
     </div>
-	</section>
+        </div>
+    </section>
 
-	<section id="notes">
-		<h2>Sweet Notes</h2>
-		<div id="main-note">
-			<p>To my dearest [Girlfriend's Name],</p>
-			<p>Happy Birthday! Every memory we've created together is a treasure. Flipping through these pictures reminds me of how lucky I am to have you in my life.</p>
-			<p>I love you more than words can say.</p>
-			<p>- Your Boyfriend</p>
-		</div>
-	</section>
+    <section id="notes">
+        <h2>Notes</h2>
+        <div id="main-note">
+            <p>To my dearest Confidence,</p>
+            <p>
+				While life may have us miles apart, my heart never stays too far from yours. Without you, i'm only a fraction of me
+				a good chunk of me is always with you whereever you are.<br> 
+				Until we meet again, my love, know that everyday i think of you. you are my forever and always.
+			</p>
+            <p>I love you more than words can say.</p>
+            <p>- Your Boyfriend</p>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; [Your Name] [Year]</p>
+        <p>&copy; your Bruno 2025</p>
     </footer>
 
+    <div id="wishPopup">
+        <h2>Hey birthday girl</h2>
+        <p>
+			I have a thousand things I want to say to you but none of these things are what you need right now.
+			So I will remind you to live, dont just exist, be alive and make your mark in this world because you are special and wonderfully made.
+			You have everything you need to conquer the world.
+		</p>
+        <input type="text" id="wishInput" placeholder="make your wish">
+        <button id="wishSubmitBtn">Make a Wish!</button>
+    </div>
+
+    <div id="balloon-container">
+        </div>
+
     <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
+        const wishPopup = document.getElementById('wishPopup');
+        const wishSubmitBtn = document.getElementById('wishSubmitBtn');
+        const balloonContainer = document.getElementById('balloon-container');
+
+        // Show the pop-up on load
+        body.classList.add('popup-active');
+        wishPopup.style.display = 'block';
+
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            const randomColor = `hsl(${Math.random() * 360}, 70%, 50%)`;
+            balloon.style.backgroundColor = randomColor;
+            balloon.style.left = `${Math.random() * 100}vw`;
+            balloon.style.setProperty('--float-x', `${(Math.random() - 0.5) * 200}px`);
+            balloon.style.setProperty('--float-rotate', `${(Math.random() - 0.5) * 60}`);
+            balloonContainer.appendChild(balloon);
+
+            // Remove balloon after animation
+            balloon.addEventListener('animationend', () => {
+                balloon.remove();
+            });
+        }
+
+        wishSubmitBtn.addEventListener('click', function() {
+            const wishText = document.getElementById('wishInput').value;
+            console.log("Wish made:", wishText);
+
+            localStorage.setItem('birthdayWish', wishText);
+            alert("Your wish has been noted!");
+
+            body.classList.remove('popup-active');
+            wishPopup.style.display = 'none';
+
+            // Create multiple balloons
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createBalloon, i * 200);
+            }
+        });
+    });
+    </script>
 </body>
 </html>
