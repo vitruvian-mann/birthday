@@ -20,8 +20,6 @@ header {
     max-width: 300px;
     border-radius: 10px;
     margin-bottom: 20px;
-	height: 50px;
-	width: 50px;
 }
 
 #gallery {
@@ -167,4 +165,16 @@ footer {
 .slide-caption p {
     margin: 0;
     font-size: 0.9em;
+}
+/* ... your existing styles ... */
+
+body.popup-active > *:not(#wishPopup) {
+    filter: blur(5px) opacity(0.5);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#wishPopup {
+    /* ... your existing #wishPopup styles ... */
+    opacity: 1; /* Ensure the pop-up is visible */
+    transition: opacity 0.3s ease-in-out;
 }
