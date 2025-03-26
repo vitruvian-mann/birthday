@@ -109,6 +109,7 @@ footer {
 }
 
 .carousel-slide {
+    position: relative;
     display: none;
     width: 100%;
 }
@@ -150,11 +151,13 @@ footer {
     color: white;
     padding: 15px;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 50%;
     width: 100%;
+	transform: translateX(-50%);
     text-align: center;
     opacity: 0;
+	box-sizing: border-box;
     transition: opacity 0.3s ease-in-out;
 }
 
